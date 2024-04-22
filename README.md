@@ -7,13 +7,11 @@ I used the official [YOLOv5](https://github.com/ultralytics/yolov5) model by Ult
 
 The personal model was labelled and processed using [Roboflow](https://roboflow.com/).
 
-## Real-time detection
-This project uses real-time detection and logging for each run that you do. Each log is documented in the `'/Logs'` directory with each run being labeled `'/runX'` with `X` being the current run iteration. In ever
-
-My personal model was trained on ~80 images with 100 epochs and trained in ~3 hrs. Here is what the real time detection looks like for my model:
+## Real-time detection using YOLOv5s
+My personal model was trained on ~80 images with 100 epochs and trained in ~3 hrs using yolov5s. Here is what the real time detection looks like for my model:
 ![personal_gif](/images/ours.gif)
 
-The roboflow model consists of ~1800 images with 50 epochs and batch size of 244. The training took ~12 hrs and here is what the results from this model look like:
+The roboflow model consists of ~1800 images with 50 epochs and batch size of 244 using yolov5s. The training took ~12 hrs and here is what the results from this model look like:
 ![medium_model_gif](/images/model_.gif)
 
 ### Comparison
@@ -21,6 +19,11 @@ The roboflow model consists of ~1800 images with 50 epochs and batch size of 244
 Here is a comparison between my personal dataset and the online roboflow:
 ![personal](/images/Our%20model%20frame.png)
 ![online_model](/images/Medium%20model%20frame.png)
+
+## Logging
+This project uses real-time detection and logging for each run that you do. Each log is documented in the `'/Logs'` directory with each run being labeled `'/runX'` with `X` being the current run iteration.
+
+In every `'/runX'` folder there is a corresponding `.csv` file containing logs of detections with above 90% confidence. If it detects an object with >90%, the confidence and time will be logged in the corresponding `runX.csv` file. Along with the logging in the file there will also be a corresponding screen capture logged in the `'/runX/images'` folder. 
 
 ### Usage
 
