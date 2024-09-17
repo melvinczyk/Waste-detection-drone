@@ -3,15 +3,15 @@
 ## Project Description
 This is a project that implements real-time object detection with custom and collected data on a [Tello](https://www.ryzerobotics.com/de/tello) drone.
 
-I used the official [YOLOv5](https://github.com/ultralytics/yolov5) model by Ultralytics and trained it on two custom datasets. I used a custom personal dataset with ~70 images and one dataset [Trash Detection Image Dataset](https://universe.roboflow.com/trash-dataset-for-oriented-bounded-box/trash-detection-1fjjc/dataset/10) was used to train a more accurate model with ~1800 images. The code for the models is under `'/yolov5'`, the personal model is under `'/Personal-Trash-Data'`, and the roboflow dataset is under `'/Medium-Trash-Data'`.
+I used the official [YOLOv5](https://github.com/ultralytics/yolov5) model by Ultralytics and trained it on two custom datasets. I used a custom personal dataset with ~70 images annotated and curated, and one dataset [Trash Detection Image Dataset](https://universe.roboflow.com/trash-dataset-for-oriented-bounded-box/trash-detection-1fjjc/dataset/10) was used to train a more accurate model with ~1800 images.
 
 The personal model was labelled and processed using [Roboflow](https://roboflow.com/).
 
 ## Real-time detection using YOLOv5s
-My personal model was trained on ~80 images with 100 epochs and trained in ~3 hrs using yolov5s. Here is what the real time detection looks like for my model:
+My custom model was trained on approximately 80 images over 100 epochs with a precision of 64%, using YOLOv5s. Here’s a glimpse of its real-time detection performance::
 ![personal_gif](/images/ours.gif)
 
-The roboflow model consists of ~1800 images with 50 epochs and batch size of 244 using yolov5s. The training took ~12 hrs and here is what the results from this model look like:
+The Roboflow dataset contains approximately 1,800 images and was trained for 50 epochs with a batch size of 244 using the YOLOv5s model with a precision of 90%! Here are the results produced by the model:
 ![medium_model_gif](/images/model_.gif)
 
 ### Comparison
